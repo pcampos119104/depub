@@ -1,4 +1,9 @@
+from datetime import datetime
+
 from django.db import models
+
+from depub.base.managers import SoftDeletionManager
+
 
 # Create your models here.
 class SoftDeletionModel(models.Model):

@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class Book(SoftDeletionModel):
     title = LowerCharField('título', max_length=64, help_text='Título da receita.')
     description = models.TextField('descrição', help_text='Breve descrição da receita.')

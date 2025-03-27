@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('depub.base.urls')),
+    path('books/', include('depub.books.urls')),
     path('__reload__/', include('django_browser_reload.urls')),
 ]
