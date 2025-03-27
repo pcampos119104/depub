@@ -20,7 +20,7 @@ mng command:
 
 # Run collectstatic
 collectstatic:
-  docker compose run --rm web python manage.py collectstatic --no-input --ignore css/input.css
+  docker compose run --rm web python manage.py collectstatic --no-input
 
 # Run the tests
 test:
