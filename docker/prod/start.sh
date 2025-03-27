@@ -6,10 +6,10 @@ set -o nounset
 
 
 echo "Running migrations..."
-python manage.py migrate
+just mng migrate
 
 echo "Running collectstatic..."
-python manage.py collectstatic --noinput
+just collectstatic
 
 echo "Starting server"
 exec gunicorn --bind :80 --workers 3 depub.wsgi:application
