@@ -236,3 +236,4 @@ fabric.properties
 /extras
 /extras/local/
 /node_modules/
+/staticfiles
