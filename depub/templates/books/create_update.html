@@ -1,4 +1,19 @@
 {% extends 'base/_base.html' %}
 {% block content %}
-    <h1>{{ text }}</h1>
+    <h1>Adicione um livro a biblioteca</h1>
+    <div
+            id="epubform"
+            x-data="{show: true}"
+    >
+        <input
+                type="file"
+                x-show="show"
+        >
+        <span
+                aria-busy="true"
+                x-show="!show"
+        >
+            Processando epub...
+        </span>
+    </div>
 {% endblock content %}
