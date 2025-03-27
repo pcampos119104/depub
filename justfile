@@ -7,7 +7,7 @@ build:
   docker compose build
 
 # Run the Django app in development mode
-runserver:
+run:
   docker compose up --build
 
 # Enter in the container shell
@@ -18,9 +18,14 @@ shell:
 mng command:
   docker compose run --rm web python manage.py {{command}}
 
+# Run collectstatic
+collectstatic:
+  docker compose run --rm web python manage.py collectstatic --no-input --ignore css/input.css
+
 # Run the tests
 test:
   docker compose run --rm web ruff check
+  just collectstatic
   docker compose run --rm web pytest
 
 # Run Ruff for fix errors
