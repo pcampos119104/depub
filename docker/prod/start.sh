@@ -9,7 +9,7 @@ echo "Running migrations..."
 python manage.py migrate
 
 echo "Running collectstatic..."
-python manage.py collectstatic --no-input --ignore css/input.css
+python manage.py collectstatic --no-input
 
 echo "Starting server"
 exec gunicorn --bind :80 --workers 3 depub.wsgi:application
