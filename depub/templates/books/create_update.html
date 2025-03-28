@@ -1,20 +1,21 @@
 {% extends 'base/_base.html' %}
 {% block content %}
     <h1>Adicione um livro a biblioteca</h1>
-    <div
-            id="epubform"
-            x-data="{show: true}"
+    <input
+            hx-encoding='multipart/form-data'
+            hx-post='{% url 'books:process-epub' %}'
+            hx-trigger="change"
+            hx-indicator="#loading"
+            hx-swap="outerHTML"
+            hx-target="#form"
+            type="file"
+            accept="application/epub+zip, application/epp+xml"
+
     >
-        <input
-                x-show="show"
-                type="file"
-                accept="application/epub+zip, application/epp+xml"
-        >
-        <span
-                x-show="!show"
-                aria-busy="true"
-        >
+    <span id="loading" class="htmx-indicator" aria-busy="true">
             Processando epub...
-        </span>
-    </div>
+    </span>
+    <div id="form"></div>
+
+
 {% endblock content %}

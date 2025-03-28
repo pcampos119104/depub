@@ -17,7 +17,9 @@
             defer></script>
     <title>Title</title>
 </head>
-<body class="container">
+<body
+        class="container"
+        hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
 <!-- Header -->
 {% include 'base/_header.html' %}
 

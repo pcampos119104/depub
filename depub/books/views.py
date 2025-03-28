@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
 
@@ -20,4 +21,6 @@ def process_epub(request):
     """
     Process the epub to extract the metadata and return the form.
     """
-    pass
+    import time
+    time.sleep(2.5)
+    return

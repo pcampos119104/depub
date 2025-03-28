@@ -17,11 +17,12 @@ Including another URLconf
 
 from django.urls import path
 
-from depub.books.views import Create
+from depub.books.views import Create, process_epub
 
 app_name = 'books'
 urlpatterns = [
     path('create/', Create.as_view(), name='create'),
+    path('process-epub/', process_epub, name='process-epub'),
     # path('', list, name='list'),
     # path('<slug:slug>/', detail, name='detail'),
     # path('<slug:slug>/update/', Update.as_view(), name='update'),
