@@ -6,12 +6,13 @@
             x-data="{show: true}"
     >
         <input
-                type="file"
                 x-show="show"
+                type="file"
+                accept="application/epub+zip, application/epp+xml"
         >
         <span
-                aria-busy="true"
                 x-show="!show"
+                aria-busy="true"
         >
             Processando epub...
         </span>

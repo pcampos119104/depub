@@ -15,3 +15,9 @@ class Create(View):
 
     def post(self, request):
         pass
+
+def process_epub(request):
+    """
+    Process the epub to extract the metadata and return the form.
+    """
+    pass
